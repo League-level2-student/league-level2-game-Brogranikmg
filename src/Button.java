@@ -10,9 +10,12 @@ public class Button extends GameObject {
 	String imglink;
 	String imghover;
 	boolean hover;
+	boolean clicked;
+	GamePanel.Buttons id;
 	
-	public Button(int x, int y, int width, int height, String imglink, String imghover) {
+	public Button(GamePanel.Buttons id, int x, int y, int width, int height, String imglink, String imghover) {
 		super(x, y, width, height);
+		this.id = id;
 		try {
 			img = ImageIO.read(this.getClass().getResourceAsStream(imglink));
 			img2 = ImageIO.read(this.getClass().getResourceAsStream(imghover));
